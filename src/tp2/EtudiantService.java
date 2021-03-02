@@ -1,25 +1,22 @@
 package tp2;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-public class EtudiantService{
+public class EtudiantService {
 	
 	
-	
-	public boolean inscription (int matricule, String nom, String prÃ©nom, String email,String pwd, int id_universite) throws SQLException	
+	boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
 	{
-		
-		IEtudiantRepository StudRep= new EtudiantRepository();
-	    IUniversiteRepository UnivRep= new UniversiteRepository();
-	    Etudiant stud = new Etudiant(matricule, nom, prÃ©nom, email,pwd,id_universite);
+		EtudiantRepository StudRep= new EtudiantRepository();
+	    UniversiteRepository UnivRep= new UniversiteRepository();
+	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
-	    System.out.println("Log: dÃ©but de l'opÃ©ration d'ajout de l'Ã©tudiant avec matricule "+matricule);
+	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 	    
-	    if(email == null || email.length() == 0)
+	    if(VerifierEmail.VerifierEmailNull(email) ||VerifierEmail.VerifierEmailEmpty(email))
 	    {
 	    	return false;
 	    }
@@ -33,27 +30,16 @@ public class EtudiantService{
 	    {
 	        return false;
 	    }
-		
-		
-		
-		 if (univ.getPack() == TypePackage.Standard)
-	     {
-	          stud.setNbLivreMensuel_Autorise(10);
-	     }
-	     else if (univ.getPack() == TypePackage.Premium)
-	     {
-	    	 stud.setNbLivreMensuel_Autorise(10*2);
-	     }                           
+		       
 	     
 		 StudRep.add(stud);
-		 System.out.println("Log: Fin de l'opÃ©ration d'ajout de l'Ã©tudiant avec matricule "+matricule);
+		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 		 return true;
 	    
 		
 	}
-	
-	
-	
+
+		
 
 public ArrayList<Etudiant> GetEtudiantParUniversitye()
 {
@@ -67,7 +53,6 @@ public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
 	return new ArrayList<>(4);
 	
 }
-
 
 
 }
