@@ -5,19 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-public class EtudiantService implements IEtudiantRepository, IUniversiteRepository {
+public class EtudiantService{
 	
 	
 	
-	public boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
+	public boolean inscription (int matricule, String nom, String prÃ©nom, String email,String pwd, int id_universite) throws SQLException	
 	{
 		
 		IEtudiantRepository StudRep= new EtudiantRepository();
 	    IUniversiteRepository UnivRep= new UniversiteRepository();
-	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
+	    Etudiant stud = new Etudiant(matricule, nom, prÃ©nom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
-	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
+	    System.out.println("Log: dÃ©but de l'opÃ©ration d'ajout de l'Ã©tudiant avec matricule "+matricule);
 	    
 	    if(email == null || email.length() == 0)
 	    {
@@ -46,7 +46,7 @@ public class EtudiantService implements IEtudiantRepository, IUniversiteReposito
 	     }                           
 	     
 		 StudRep.add(stud);
-		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
+		 System.out.println("Log: Fin de l'opÃ©ration d'ajout de l'Ã©tudiant avec matricule "+matricule);
 		 return true;
 	    
 		
@@ -70,41 +70,4 @@ public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
 
 
 
-
-@Override
-public Universite GetById(int universityId) throws SQLException {
-	// TODO Auto-generated method stub
-	return null;
 }
-
-
-
-
-@Override
-public void add(Etudiant E) throws SQLException {
-	// TODO Auto-generated method stub
-	
-}
-
-
-
-
-@Override
-public boolean Exists(String email) throws SQLException {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-
-
-
-@Override
-public boolean Exists(int mat) throws SQLException {
-	// TODO Auto-generated method stub
-	return false;
-}
-
-
-	
-}
-
