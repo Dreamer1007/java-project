@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-public class EtudiantService{
+public class EtudiantService implements IEtudiantRepository, IUniversiteRepository {
 	
 	
 	
@@ -70,5 +70,41 @@ public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
 
 
 
+
+@Override
+public Universite GetById(int universityId) throws SQLException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+
+
+@Override
+public void add(Etudiant E) throws SQLException {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+
+@Override
+public boolean Exists(String email) throws SQLException {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+
+
+@Override
+public boolean Exists(int mat) throws SQLException {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+
+	
 }
 

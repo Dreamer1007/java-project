@@ -6,7 +6,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class EtudiantRepository implements IEtudiantRepository {
-		 
+	
+	 private IEtudiantRepository ietudrep;
+	 
+	 public EtudiantRepository (IEtudiantRepository ietudrep) {
+		 this.ietudrep = ietudrep;
+	 }
+	 
+		public EtudiantRepository() {
+		// TODO Auto-generated constructor stub
+	}
+
+		public IEtudiantRepository getietudrep() {
+			return  ietudrep;
+		}
+
+
+		public void Setietudrep(IEtudiantRepository ietudrep) {
+			this.ietudrep = ietudrep;
+		}
+	 
+	 
 	public void add(Etudiant E) throws SQLException
 	{
 
