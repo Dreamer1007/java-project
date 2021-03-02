@@ -15,10 +15,13 @@ public class MainApp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		// Question 9-10 Tester les classes:
 		IJournal afficherfichier = new AfficherFichier();
 		IJournal test = new AfficherType(afficherfichier);
 		test.outPut_msg("Test");
+		
 		
 		
 	}

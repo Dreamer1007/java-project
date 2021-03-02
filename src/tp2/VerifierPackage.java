@@ -10,9 +10,9 @@ public class VerifierPackage {
 		return false;
 	}
 	
-	public static boolean VerifierPackPremium(TypePackage s) {
+	public static boolean VerifierPackPremium(TypePackage p) {
 		 
-		if(s == TypePackage.Premium) {
+		if(p == TypePackage.Premium) {
 			return true;
 		}
 		

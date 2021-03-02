@@ -39,7 +39,29 @@ public class EtudiantService {
 		
 	}
 
+	
+	void nombrelivremensuel(Etudiant stud,Universite univ) {
+		// TODO Auto-generated method stub
+		if(VerifierPackage.VerifierPackStandard(univ.getPack())) {
+			 stud.setNbLivreMensuel_Autorise(10);
+		}
+		else if(VerifierPackage.VerifierPackPremium(univ.getPack())) {
+			 stud.setNbLivreMensuel_Autorise(10*2);
+		}
 		
+	}
+
+	void AjouterBonus(ArrayList<Etudiant> e, int id_universite ,UniversiteRepository univrep, Universite univ) {
+		// TODO Auto-generated method stub
+		  for(int i =0; i< e.size();i++) {
+		    	 if(VerifierPackage.VerifierPackStandard(univ.getPack())) {
+		    		 e.get(i).addBonus(5);
+		    	 }else if(VerifierPackage.VerifierPackPremium(univ.getPack())) {
+		    		 e.get(i).addBonus(10);
+		    	 }
+		     }
+	}
+
 
 public ArrayList<Etudiant> GetEtudiantParUniversitye()
 {

@@ -2,7 +2,7 @@ package tp2;
 
 
 public class Etudiant {
-		
+
 		private int matricule;
 	    private String nom;
 	    private String prenom;
@@ -11,7 +11,6 @@ public class Etudiant {
 	    private int nbLivreMensuel_Autorise;
 	    private int nbLivreEmprunte;
 	    private int id_universite;
-	    
 	   
 		public Etudiant(int matricule, String nom, String prenom, String email,String pwd, int id_universite) {
 			
@@ -72,7 +71,10 @@ public class Etudiant {
 		public void setNbLivreMensuel_Autorise(int nbLivreMensuel_Autorise) {
 			this.nbLivreMensuel_Autorise = nbLivreMensuel_Autorise;
 		}
-
+      
+		public void addBonus(int bonus) {
+			this.nbLivreMensuel_Autorise +=bonus;
+		}
 
 		public int getNbLivreEmprunte() {
 			return nbLivreEmprunte;
@@ -103,6 +105,10 @@ public class Etudiant {
 			this.pwd = pwd;
 		}
 
-		
+		public void ajouterBonus(int bonus) {
+			this.nbLivreMensuel_Autorise +=bonus;
+		}
+
 		
 	    }
+
