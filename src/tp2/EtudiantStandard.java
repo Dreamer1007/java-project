@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public  class StandardEtud extends LimitedEtud {
+public  class EtudiantStandard extends EtudiantLimite {
 	
-	public StandardEtud(int matricule, String nom, String prenom, String email,String pwd, int id_universite) {
+	public EtudiantStandard(int matricule, String nom, String prenom, String email,String pwd, int id_universite) {
 		super(matricule,nom,prenom,email,pwd,id_universite);
 	}
 	

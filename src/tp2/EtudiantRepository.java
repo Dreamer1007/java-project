@@ -18,13 +18,13 @@ public class EtudiantRepository implements IEtudiantRepository {
 		int rs = stmt.executeUpdate(sql);
 		
 		if (rs == 1){
-				System.out.println("log : ajout dans la BD r�ussi de l'�tudiant  du Matricule" + E.getMatricule());
+				System.out.println("log : ajout dans la BD reussi de l'etudiant  du Matricule" + E.getMatricule());
 			}else if (rs == 0){
-				System.out.println("log : Echec de l'ajout dans la BD de l'�tudiant  du Matricule" + E.getMatricule());
+				System.out.println("log : Echec de l'ajout dans la BD de l'etudiant  du Matricule" + E.getMatricule());
 			}
 		connect.close();
 	 }
-
+	// "," +E.getNbLivreEmprunte() + "," +E.getId_universite()+
 
 	public boolean Exists(String email) throws SQLException
 	{

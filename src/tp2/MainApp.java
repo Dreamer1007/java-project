@@ -7,10 +7,10 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		
-		EtudiantService serv=new EtudiantService();
+		EtudiantService service=new EtudiantService();
 		try {
 			
-			serv.inscription(899, "batata", "batata", "batata@gmail.com","xxxxxxx", 1);
+			service.inscription(866, "meriem", "randa", "merand@gmail.com","xxxxxxx", 1);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -22,9 +22,6 @@ public class MainApp {
 		IJournal afficherfichier = new AfficherFichier();
 		IJournal test = new AfficherType(afficherfichier);
 		test.outPut_msg("Test");
-		
-	
-	
-	}
+		}
 
 }

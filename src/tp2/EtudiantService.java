@@ -12,11 +12,11 @@ public class EtudiantService {
 		EtudiantRepository StudRep= new EtudiantRepository();
 	    UniversiteRepository UnivRep= new UniversiteRepository();
 	    
-	   // Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
+	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
-	    EtudFac etf = new EtudFac();
-	    Etudiant stud = etf.createEtu(matricule, prénom, nom, email, pwd, id_universite, TypePackage.Standard);
+	    //EtudiantFactory etf = new EtudiantFactory();
+	    //Etudiant stud = etf.createEtu(matricule, prénom, nom, email, pwd, id_universite, TypePackage.Standard);
 	    
 	    
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
@@ -34,15 +34,15 @@ public class EtudiantService {
 		if (StudRep.Exists(email))
 	    {
 	        return false;
-	    }
-		 if(VerifierPackage.VerifierPackStandard(univ.getPack()))
+	    } 
+		 /*if(VerifierPackage.VerifierPackStandard(univ.getPack()))
 		 {
 			 return true;
 		 }
 	     if(VerifierPackage.VerifierPackPremium(univ.getPack()))
 	     {
 	    	 return true;
-	     }
+	     }*/
 	     
 		 StudRep.add(stud);
 		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
