@@ -33,7 +33,7 @@ public class UniversiteRepository  implements IUniversiteRepository{
 		DBConnection.setConnexion();
 		Connection connect=DBConnection.getConn();
 		Statement stmt = connect.createStatement();
-		System.out.println("LogBD : début recherche de id université dans la base de donnée");
+		System.out.println("LogBD : dï¿½but recherche de id universitï¿½ dans la base de donnï¿½e");
 		
 		String sql = "select * from universite where id_universite="+ universityId;
 		ResultSet rs = stmt.executeQuery(sql);
@@ -41,7 +41,7 @@ public class UniversiteRepository  implements IUniversiteRepository{
 		TypePackage p=TypePackage.valueOf(rs.getString(3));
 		Universite u = new Universite (rs.getInt(1),rs.getString(2),p);
 			
-		System.out.println("LogBD : université récupérée");
+		System.out.println("LogBD : universite recuperee");
 		
 		connect.close();
 		return u;	

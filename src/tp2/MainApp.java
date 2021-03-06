@@ -1,6 +1,7 @@
 package tp2;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MainApp {
 
@@ -9,7 +10,7 @@ public class MainApp {
 		EtudiantService serv=new EtudiantService();
 		try {
 			
-			serv.inscription(8, "Randa", "randa", "meriem1855@gmail.com","xxxxxxx", 1);
+			serv.inscription(8, "kl", "bb", "bb@gmail.com","xxxxxxx", 2);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -22,8 +23,8 @@ public class MainApp {
 		IJournal test = new AfficherType(afficherfichier);
 		test.outPut_msg("Test");
 		
-		
-		
+	
+	
 	}
 
 }

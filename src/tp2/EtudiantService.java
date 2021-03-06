@@ -14,6 +14,7 @@ public class EtudiantService {
 	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
+	    
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 	    
 	    if(VerifierEmail.VerifierEmailNull(email) ||VerifierEmail.VerifierEmailEmpty(email))
