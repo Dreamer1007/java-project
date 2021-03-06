@@ -18,9 +18,9 @@ public class EtudiantRepository implements IEtudiantRepository {
 		int rs = stmt.executeUpdate(sql);
 		
 		if (rs == 1){
-				System.out.println("log : ajout dans la BD réussi de l'étudiant  du Matricule" + E.getMatricule());
+				System.out.println("log : ajout dans la BD rï¿½ussi de l'ï¿½tudiant  du Matricule" + E.getMatricule());
 			}else if (rs == 0){
-				System.out.println("log : Echec de l'ajout dans la BD de l'étudiant  du Matricule" + E.getMatricule());
+				System.out.println("log : Echec de l'ajout dans la BD de l'ï¿½tudiant  du Matricule" + E.getMatricule());
 			}
 		connect.close();
 	 }
@@ -55,7 +55,7 @@ public class EtudiantRepository implements IEtudiantRepository {
 		ResultSet rs = stmt.executeQuery(sql);
 		
 		if (rs.next()){
-			System.out.println("logBD--- :etudiant avec cette matricule existe déja dans la BD  " + mat);
+			System.out.println("logBD--- :etudiant avec cette matricule existe dï¿½ja dans la BD  " + mat);
 			
 			return true;
 			}
