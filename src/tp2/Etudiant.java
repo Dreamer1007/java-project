@@ -8,7 +8,7 @@ public class Etudiant {
 	    private String prenom;
 	    private String email ;
 	    private String pwd;
-	    private int nbLivreMensuel_Autorise;
+	    protected int nbLivreMensuel_Autorise;
 	    private int nbLivreEmprunte;
 	    private int id_universite;
 	   
