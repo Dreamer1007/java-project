@@ -32,8 +32,14 @@ public class EtudiantService {
 	    {
 	        return false;
 	    }
-		       
-	     
+		 if(VerifierPackage.VerifierPackStandard(univ.getPack()))
+		 {
+			 return true;
+		 }
+	     if(VerifierPackage.VerifierPackPremium(univ.getPack()))
+	     {
+	    	 return true;
+	     }
 		 StudRep.add(stud);
 		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 		 return true;
