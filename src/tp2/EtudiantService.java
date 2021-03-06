@@ -7,13 +7,16 @@ import java.util.ArrayList;
 public class EtudiantService {
 	
 	
-	boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
+	public boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws Exception	
 	{
 		EtudiantRepository StudRep= new EtudiantRepository();
 	    UniversiteRepository UnivRep= new UniversiteRepository();
 	    
-	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
+	   // Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
+	    
+	    EtudFac etf = new EtudFac();
+	    Etudiant stud = etf.createEtu(matricule, prénom, nom, email, pwd, id_universite, TypePackage.Standard);
 	    
 	    
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
