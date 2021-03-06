@@ -1,6 +1,6 @@
 package tp2;
 
-public abstract class EtudiantIllimite extends EtudiantLimite {
+public abstract class EtudiantIllimite extends Etudiant {
 
 	
 	public abstract void AddBonusAl();
