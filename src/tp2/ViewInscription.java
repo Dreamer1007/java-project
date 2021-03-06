@@ -6,6 +6,9 @@ import java.awt.Container;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -77,6 +80,25 @@ public class ViewInscription
         this.contentPane.add(this.btnSubmit);
         (this.btnCancel = new JButton("Cancel")).setBounds(184, 227, 89, 23);
         this.contentPane.add(this.btnCancel);
+        this.btnSubmit.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	if(champs_validation()){
+            		EtudiantService service=new EtudiantService();
+        			try {
+        				service.inscription(Integer.parseInt(Get_Mat()), Get_Nom(), Get_Prenom(), Get_email(),Get_pwd(), Integer.parseInt(Get_id_univ()));
+					} catch (Exception e1) {
+					
+						e1.printStackTrace();
+					}
+            	
+            	}
+                
+            }
+
+			
+        });
     }
     
     @SuppressWarnings("unused")
@@ -150,3 +172,5 @@ public class ViewInscription
         return this.TxtIdUniv.getText();
     }
 }
+
+

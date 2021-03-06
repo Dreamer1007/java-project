@@ -18,14 +18,14 @@ public class MainApp {
             
         }
 		
-		try {
+		/*try {
 			
 			service.inscription(605, "rannda", "randa", "rannda@gmail.com","xxxxxxx", 1);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 		// Question 9-10 Tester les classes:
