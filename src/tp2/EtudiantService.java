@@ -40,6 +40,7 @@ public class EtudiantService {
 	     {
 	    	 return true;
 	     }
+	     
 		 StudRep.add(stud);
 		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 		 return true;
