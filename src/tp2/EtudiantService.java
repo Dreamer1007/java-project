@@ -12,11 +12,11 @@ public class EtudiantService {
 		EtudiantRepository StudRep= new EtudiantRepository();
 	    UniversiteRepository UnivRep= new UniversiteRepository();
 	    
-	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
+	    // Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
-	    //EtudiantFactory etf = new EtudiantFactory();
-	    //Etudiant stud = etf.createEtu(matricule, prénom, nom, email, pwd, id_universite, TypePackage.Standard);
+	    EtudiantFactory etf = new EtudiantFactory();
+	    Etudiant stud = etf.createEtu(matricule, prénom, nom, email, pwd, id_universite, TypePackage.Standard);
 	    
 	    
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
@@ -35,14 +35,17 @@ public class EtudiantService {
 	    {
 	        return false;
 	    } 
-		 /*if(VerifierPackage.VerifierPackStandard(univ.getPack()))
+		
+		 if(VerifierPackage.VerifierPack(univ.getPack()))
 		 {
-			 return true;
+			 stud.setNbLivreMensuel_Autorise(10);
+			 System.out.println("hello");
+
 		 }
-	     if(VerifierPackage.VerifierPackPremium(univ.getPack()))
+		 else
 	     {
-	    	 return true;
-	     }*/
+	    	 stud.setNbLivreMensuel_Autorise(10*2);
+	     }
 	     
 		 StudRep.add(stud);
 		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
@@ -54,10 +57,10 @@ public class EtudiantService {
 	
 	void nombrelivremensuel(Etudiant stud,Universite univ) {
 		// TODO Auto-generated method stub
-		if(VerifierPackage.VerifierPackStandard(univ.getPack())) {
+		if(VerifierPackage.VerifierPack(univ.getPack())) {
 			 stud.setNbLivreMensuel_Autorise(10);
 		}
-		else if(VerifierPackage.VerifierPackPremium(univ.getPack())) {
+		else{
 			 stud.setNbLivreMensuel_Autorise(10*2);
 		}
 		
@@ -66,9 +69,9 @@ public class EtudiantService {
 	void AjouterBonus(ArrayList<Etudiant> e, int id_universite ,UniversiteRepository univrep, Universite univ) {
 		// TODO Auto-generated method stub
 		  for(int i =0; i< e.size();i++) {
-		    	 if(VerifierPackage.VerifierPackStandard(univ.getPack())) {
+		    	 if(VerifierPackage.VerifierPack(univ.getPack())) {
 		    		 e.get(i).ajouterBonus(5);
-		    	 }else if(VerifierPackage.VerifierPackPremium(univ.getPack())) {
+		    	 }else {
 		    		 e.get(i).ajouterBonus(10);
 		    	 }
 		     }

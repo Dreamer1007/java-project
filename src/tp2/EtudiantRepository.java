@@ -14,7 +14,7 @@ public class EtudiantRepository implements IEtudiantRepository {
 		Connection connect=DBConnection.getConn();
 		
 		Statement stmt = connect.createStatement();
-		String sql = "INSERT into etudiant values (" + E.getMatricule() + ",'" + E.getNom() + "','" + E.getPrenom() + "','" + E.getEmail()+ "','" + E.getPwd() + "'," +E.getNbLivreMensuel_Autorise() + "," +E.getNbLivreEmprunte() + "," +E.getId_universite()+")";
+		String sql = "INSERT into etudiant values (" + E.getMatricule() + ",'" + E.getNom() + "','" + E.getPrenom() + "','" + E.getEmail()+ "','" + E.getPwd() + "'," +E.getId_universite()+ "," +E.getNbLivreMensuel_Autorise() + "," +E.getNbLivreEmprunte() + ")";
 		int rs = stmt.executeUpdate(sql);
 		
 		if (rs == 1){
@@ -24,7 +24,7 @@ public class EtudiantRepository implements IEtudiantRepository {
 			}
 		connect.close();
 	 }
-	// "," +E.getNbLivreEmprunte() + "," +E.getId_universite()+
+	
 
 	public boolean Exists(String email) throws SQLException
 	{
