@@ -9,14 +9,14 @@ public class MainApp {
 		
 		EtudiantService service=new EtudiantService();
 		
-		/*try {
+		try {
             final ViewInscription v = new ViewInscription();
             v.Show_Inscription();
         }
 	    catch (Exception e) {
             e.printStackTrace();
             
-        }*/
+        }
 		
 		try {
 			
