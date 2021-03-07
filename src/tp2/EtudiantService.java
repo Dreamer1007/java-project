@@ -35,6 +35,11 @@ public class EtudiantService {
 	    {
 	        return false;
 	    } 
+				
+				IJournal afficherfichier = new AfficherFichier();
+				IJournal test = new AfficherType(afficherfichier);
+				test.outPut_msg("Test");
+				
 		
 		 if(VerifierPackage.VerifierPack(univ.getPack()))
 		 {
